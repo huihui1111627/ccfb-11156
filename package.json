@@ -1,0 +1,23 @@
+{
+  "name": "audience-sync",
+  "version": "0.1.0",
+  "private": true,
+  "description": "数仓分群到外部投放平台的分群同步工具",
+  "type": "module",
+  "engines": {
+    "node": ">=22.16"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "npm run build && node --disable-warning=ExperimentalWarning dist/server/index.js",
+    "seed": "npm run build && node --disable-warning=ExperimentalWarning dist/scripts/seedCli.js",
+    "demo": "npm run build && node --disable-warning=ExperimentalWarning dist/scripts/demo.js",
+    "verify": "npm run build && node --disable-warning=ExperimentalWarning dist/scripts/verifyCli.js",
+    "test": "npm run build && node --disable-warning=ExperimentalWarning --test dist/test/*.test.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}

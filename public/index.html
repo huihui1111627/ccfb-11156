@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>分群同步控制台</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="logo">⇄</span>
+      <div>
+        <strong>分群同步</strong>
+        <small>数仓 → 投放平台</small>
+      </div>
+    </div>
+    <nav id="nav">
+      <button data-view="overview" class="active">总览</button>
+      <button data-view="destinations">目的地连接</button>
+      <button data-view="tasks">同步任务</button>
+      <button data-view="preview">人群差异 / 预览</button>
+      <button data-view="logs">发送日志</button>
+      <button data-view="failures">失败记录</button>
+      <button data-view="stats">统计报表</button>
+      <button data-view="verify">名单核对</button>
+    </nav>
+    <div class="sidebar-foot">
+      <div id="health" class="health">连接中…</div>
+      <div class="business-date">业务日 <span id="businessDate">—</span></div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <div class="topbar">
+      <h1 id="viewTitle">总览</h1>
+      <div class="topbar-actions" id="topActions"></div>
+    </div>
+    <section id="view" class="view"></section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+  <div id="modal" class="modal" hidden>
+    <div class="modal-card">
+      <header>
+        <h3 id="modalTitle">确认</h3>
+        <button class="icon-btn" id="modalClose">✕</button>
+      </header>
+      <div id="modalBody" class="modal-body"></div>
+      <footer id="modalFooter" class="modal-footer"></footer>
+    </div>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
